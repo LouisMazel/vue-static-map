@@ -19,7 +19,7 @@
 
 1. Install from npm
 
-		npm install vue-static-map
+		npm install --save LouisMazel/vue-static-map#master
 
 	Or include in your html using the script tag
 	```html
@@ -47,32 +47,29 @@
 	export default {
 		data: {
 			apiKey: 'YOUR_GOOGLE_API_KEY', // required
-			zoom: 13, // required
-			center: 'Brooklyn+Bridge,New+York,NY',
-			format: 'gif',
-			language: 'ja',
+			zoom: 13,
+			center: 'Paris',
+			format: 'png',
+			language: 'fr',
 			markers: [
 				{
-					label: 'B', color: 'blue', lat: 40.702147, lng: -74.015794, size: 'normal',
+					label: 'A', color: 'green', lat: 48.8396851, lng: 2.3922176, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
 				},
 				{
-					label: 'Y', color: 'yellow', lat: 40.711614, lng: -74.012318, size: 'tiny',
-				},
-				{
-					label: 'G', color: 'green', lat: 40.718217, lng: -74.015794, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
+					label: 'B', color: 'green', lat: 49.7802536, lng: 4.6953587, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
 				},
 			],
 			paths: [
 				{
-					color: 'blue',
-					weight: 8,
-					geodesic: false,
-					fillcolor: '0xFFFF0033',
+					color: '0x2f8fb6',
+					weight: 4,
 					locations: [
-						{ startLat: 40.737102, endLng: -73.990318 },
-						{ startLat: 40.749825, endLng: -73.987963 },
-						{ startLat: 40.752946, endLng: -73.987384 },
-						{ startLat: 40.762946, endLng: -73.997399 },
+						{
+							startLat: 48.8396851, endLng: 2.3922176,
+						},
+						{
+							startLat: 49.7802536, endLng: 4.6953587,
+						},
 					],
 				},
 			],
