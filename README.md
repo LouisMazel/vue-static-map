@@ -136,6 +136,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-vue build src/components/StaticMap.vue --prod --lib
+# build for production with minification (use poi : https://github.com/egoist/poi)
+poi build src/components/StaticMap.vue --format cjs --filename.js StaticMap.js --no-html
 ```
