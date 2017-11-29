@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<h1>Vue Static Map</h1>
-		<static-map :google-api-key="apiKey" :language="language" v-on:get-url="getUrl" :paths="paths" :format="format" :markers="markers" :zoom="zoom" :center="center" :size="size" :type="type"></static-map>
+		<static-map id="staticMap" :google-api-key="apiKey" :zoom="zoom" :center="center" :scale="scale" :language="language" v-on:get-url="getUrl" :paths="paths" :format="format" :markers="markers" :size="size" :type="type"></static-map>
 		<div>
 			<pre>{{url}}</pre>
 		</div>
@@ -19,39 +19,38 @@ export default {
 	data: () => {
 		const dataValues = {
 			apiKey: '',
-			center: 'Brooklyn+Bridge,New+York,NY',
-			format: 'gif',
-			language: 'ja',
+			format: 'png',
+			language: 'fr',
 			markers: [
 				{
-					label: 'W', color: 'blue', lat: 40.702147, lng: -74.015794, size: 'normal',
+					lat: 48.8396851, lng: 2.3922176, icon: 'https://s3-eu-west-1.amazonaws.com/ct-documents/emails/A-static.png',
 				},
 				{
-					label: 'Y', color: 'yellow', lat: 40.711614, lng: -74.012318, size: 'tiny',
-				},
-				{
-					label: 'G', color: 'green', lat: 40.718217, lng: -74.015794, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
+					lat: 49.7802536, lng: 4.6953587, icon: 'https://s3-eu-west-1.amazonaws.com/ct-documents/emails/B-static.png',
 				},
 			],
 			paths: [
 				{
-					color: 'blue',
-					weight: 8,
-					geodesic: false,
-					fillcolor: '0xFFFF0033',
+					color: '0x2f8fb6',
+					weight: 5,
+					geodesic: true,
+					fillcolor: '0x96bf31',
 					locations: [
-						{ startLat: 40.737102, endLng: -73.990318 },
-						{ startLat: 40.749825, endLng: -73.987963 },
-						{ startLat: 40.752946, endLng: -73.987384 },
-						{ startLat: 40.762946, endLng: -73.997399 },
+						{
+							startLat: 48.8396851, endLng: 2.3922176,
+						},
+						{
+							startLat: 49.7802536, endLng: 4.6953587,
+						},
 					],
 				},
 			],
-			scale: '1',
-			size: [800, 400],
+			scale: '2',
+			zoom: 7,
+			center: 'Reims',
+			size: [1280, 250],
 			type: 'roadmap',
 			url: '',
-			zoom: 13,
 		};
 		return dataValues;
 	},
@@ -74,7 +73,9 @@ export default {
 	color: #2c3e50;
 	margin-top: 60px;
 }
-
+#staticMap {
+	width: 640px;
+}
 pre {
 	white-space: pre-line;
 }

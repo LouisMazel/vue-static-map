@@ -20,7 +20,8 @@ function generateMapType() {
 }
 
 function generateMapUrl() {
-	const mapUrl = `${BASE_URL_MAP}center=${this.center}&zoom=${this.zoom}&size=${this.sizeMap}&maptype=${this.mapTypeMap}&format=${this.formatMap}&key=${this.googleApiKey}&scale=${this.scaleMap}&language=${this.language}${this.markersMap}${this.pathsMap}`;
+	// center=${this.center}&zoom=${this.zoom}&
+	const mapUrl = `${BASE_URL_MAP}size=${this.sizeMap}&maptype=${this.mapTypeMap}&format=${this.formatMap}&key=${this.googleApiKey}&scale=${this.scaleMap}&language=${this.language}${this.markersMap}${this.pathsMap}${this.centerMap}${this.zoomMap}`;
 	this.$emit('get-url', mapUrl);
 	return mapUrl;
 }
@@ -70,7 +71,7 @@ function generatePaths() {
 		const pathUrl = `&path=${color}|${fillcolor}|${geodesic}|${weight}${joinLatLng}`;
 		return pathUrl;
 	});
-	return paths[0];
+	return paths[0] || '';
 }
 
 function generateScaleMap() {
@@ -89,6 +90,14 @@ function generateSizeMap() {
 	throw Error('Size must have 2 values: WIDTH AND HEIGHT');
 }
 
+function generateZoom() {
+	return this.zoom ? `&zoom=${this.zoom}` : '';
+}
+
+function generateCenter() {
+	return this.center ? `&center=${this.center}` : '';
+}
+
 export default {
 	computed: {
 		formatMap: generateFormatMap,
@@ -98,11 +107,13 @@ export default {
 		pathsMap: generatePaths,
 		scaleMap: generateScaleMap,
 		sizeMap: generateSizeMap,
+		zoomMap: generateZoom,
+		centerMap: generateCenter,
 	},
 	props: {
 		center: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		format: {
 			type: String,
@@ -141,9 +152,8 @@ export default {
 		},
 		zoom: {
 			type: Number,
-			required: true,
+			required: false,
 		},
 	},
 };
 </script>
-

@@ -47,22 +47,22 @@
 	export default {
 		data: {
 			apiKey: 'YOUR_GOOGLE_API_KEY', // required
-			zoom: 13,
-			center: 'Paris',
 			format: 'png',
 			language: 'fr',
 			markers: [
 				{
-					label: 'A', color: 'green', lat: 48.8396851, lng: 2.3922176, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
+					lat: 48.8396851, lng: 2.3922176, icon: 'https://s3-eu-west-1.amazonaws.com/ct-documents/emails/A-static.png',
 				},
 				{
-					label: 'B', color: 'green', lat: 49.7802536, lng: 4.6953587, size: 'small', icon: 'http://www.airsoftmap.net/images/pin_map.png',
+					lat: 49.7802536, lng: 4.6953587, icon: 'https://s3-eu-west-1.amazonaws.com/ct-documents/emails/B-static.png',
 				},
 			],
 			paths: [
 				{
 					color: '0x2f8fb6',
-					weight: 4,
+					weight: 5,
+					geodesic: true,
+					fillcolor: '0x96bf31',
 					locations: [
 						{
 							startLat: 48.8396851, endLng: 2.3922176,
@@ -73,8 +73,12 @@
 					],
 				},
 			],
+			scale: '2',
+			zoom: 7,
+			center: 'Reims',
+			size: [1280, 250],
 			type: 'roadmap',
-			size: [800, 400],
+			url: '',
 		},
 		components: {
 			StaticMap,
