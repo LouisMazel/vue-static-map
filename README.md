@@ -19,7 +19,7 @@
 
 1. Install from npm
 
-		npm install --save LouisMazel/vue-static-map#master
+		npm install --save LouisMazel/vue-static-map#master --save
 
 	Or include in your html using the script tag
 	```html
