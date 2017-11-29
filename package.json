@@ -1,15 +1,16 @@
 {
 	"name": "vue-static-map",
-	"version": "2.0.0",
+	"version": "LouisMazel/vue-static-map",
 	"description": "a simple component to generate static google map",
 	"keywords": [
 		"vue",
 		"google",
-		"maps"
+		"maps",
+		"static"
 	],
-	"author": "Eduardo Peredo <jrperedo@gmail.com>",
+	"author": "Louis Mazel",
 	"license": "MIT",
-	"homepage": "https://github.com/eperedo/vue-static-map#readme",
+	"homepage": "https://github.com/LouisMazel/vue-static-map#readme",
 	"main": "dist/StaticMap.js",
 	"scripts": {
 		"dev": "node build/dev-server.js",
@@ -74,9 +75,9 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/eperedo/vue-static-map.git"
+		"url": "git+https://github.com/LouisMazel/vue-static-map.git"
 	},
 	"bugs": {
-		"url": "https://github.com/eperedo/vue-static-map/issues"
+		"url": "https://github.com/LouisMazel/vue-static-map/issues"
 	}
 }
